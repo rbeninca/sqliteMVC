@@ -20,7 +20,7 @@ public class FrutaDao extends DB {
         this.database.execSQL("CREATE TABLE IF NOT EXISTS frutas (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome VARCHAR," +
-                " TIPO VARCHAR ); ") ;
+                "tipo VARCHAR ); ") ;
     }
 
 
@@ -47,14 +47,14 @@ public class FrutaDao extends DB {
             return new Fruta(
                     cursor.getInt(cursor.getColumnIndex("id")),
                     cursor.getString(cursor.getColumnIndex("nome")),
-                    cursor.getString(cursor.getColumnIndex("TIPO"))
+                    cursor.getString(cursor.getColumnIndex("tipo"))
             );
     }
     public int atualiza_fruta(Fruta f){
         if(f!=null) {
             ContentValues contentValues = new ContentValues();
             contentValues.put("nome", f.nome);
-            contentValues.put("TIPO", f.nome);
+            contentValues.put("tipo", f.nome);
             return this.database.update("frutas", contentValues, "id=?", new String[]{f.id.toString()});
         }
         return  -1 ;
@@ -67,7 +67,7 @@ public class FrutaDao extends DB {
             listFrutaResult.add(new Fruta(
                                     dataSetCursor.getInt(dataSetCursor.getColumnIndex("id")),
                                     dataSetCursor.getString(dataSetCursor.getColumnIndex("nome")),
-                                    dataSetCursor.getString(dataSetCursor.getColumnIndex("TIPO"))
+                                    dataSetCursor.getString(dataSetCursor.getColumnIndex("tipo"))
                                         )
                                 );
             dataSetCursor.moveToNext();

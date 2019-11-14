@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                             id.setText(f.getId().toString());
                             nome.setText(f.getNome());
                             tipo.setText(f.getTipo());
-                            Toast.makeText(getApplicationContext(),Integer.toString(position),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),Integer.toString(f.getId()),Toast.LENGTH_LONG).show();
                         }
                         @Override
                         public void onLongItemClick(View view, int position) { }

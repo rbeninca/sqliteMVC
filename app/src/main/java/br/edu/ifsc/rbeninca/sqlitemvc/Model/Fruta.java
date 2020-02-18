@@ -6,6 +6,10 @@ public  class Fruta {
     String nome;
     String tipo;
 
+    public Fruta(String nome, String tipo) {
+        this.nome = nome;
+        this.tipo = tipo;
+    }
 
     public Fruta(Integer id, String nome, String tipo) {
         this.id = id;
